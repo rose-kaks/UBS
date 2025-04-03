@@ -16,8 +16,8 @@ const SchoolVolunteers = () => {
   const activeVolunteers = [
     {
       id: 1,
-      name: "Dr. Sarah Johnson",
-      email: "sarah.johnson@example.com",
+      name: "Dr. Vandana Sharma",
+      email: "abc@example.com",
       avatar: "/placeholder.svg",
       subject: "Mathematics",
       experience: "10+ years",
@@ -28,8 +28,8 @@ const SchoolVolunteers = () => {
     },
     {
       id: 2,
-      name: "Mr. Michael Williams",
-      email: "michael.williams@example.com",
+      name: "Mr. Deepak Yadav",
+      email: "abcd@example.com",
       avatar: "/placeholder.svg",
       subject: "English Literature",
       experience: "8 years",
@@ -40,8 +40,8 @@ const SchoolVolunteers = () => {
     },
     {
       id: 3,
-      name: "Ms. Emily Chen",
-      email: "emily.chen@example.com",
+      name: "Ms. Ananya Sen",
+      email: "abcde@example.com",
       avatar: "/placeholder.svg",
       subject: "Science",
       experience: "12 years",
@@ -55,8 +55,8 @@ const SchoolVolunteers = () => {
   const applicants = [
     {
       id: 4,
-      name: "Dr. James Wilson",
-      email: "james.wilson@example.com",
+      name: "Dr. Rohan Patil",
+      email: "abcdef@example.com",
       avatar: "/placeholder.svg",
       subject: "History",
       experience: "15 years",
@@ -66,8 +66,8 @@ const SchoolVolunteers = () => {
     },
     {
       id: 5,
-      name: "Ms. Sophia Garcia",
-      email: "sophia.garcia@example.com",
+      name: "Ms. Neha Iyer",
+      email: "abcdefg@example.com",
       avatar: "/placeholder.svg",
       subject: "Spanish",
       experience: "7 years",
