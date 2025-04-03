@@ -38,8 +38,8 @@ const SchoolJobs = () => {
       gradeLevel: "8-10",
       status: "Open",
       applications: 4,
-      required: "Shakespeare, Poetry Analysis",
-      description: "Seeking an English literature instructor to teach Shakespeare and poetry analysis to middle and high school students."
+      required: "Literature, Poetry Analysis",
+      description: "Seeking an English literature instructor to teach Literature and poetry analysis to middle and high school students."
     }
   ];
   
@@ -53,7 +53,7 @@ const SchoolJobs = () => {
       duration: "6 months",
       gradeLevel: "10-12",
       status: "Filled",
-      filledBy: "Dr. Emily Chen",
+      filledBy: "Meera Joshi",
       required: "Chemistry, Biology",
       description: "Needed a science lab assistant to help with chemistry and biology experiments for high school students."
     }
@@ -64,8 +64,8 @@ const SchoolJobs = () => {
       id: 1,
       jobTitle: "Mathematics Teacher",
       applicant: {
-        name: "Dr. Robert Lee",
-        email: "robert.lee@example.com",
+        name: "Dr. Akash Verma",
+        email: "abc@example.com",
         avatar: "/placeholder.svg"
       },
       appliedDate: "Apr 2, 2023",
@@ -76,8 +76,8 @@ const SchoolJobs = () => {
       id: 2,
       jobTitle: "Mathematics Teacher",
       applicant: {
-        name: "Ms. Jennifer Smith",
-        email: "jennifer.smith@example.com",
+        name: "Ms. Vandana Sharma",
+        email: "abcd@example.com",
         avatar: "/placeholder.svg"
       },
       appliedDate: "Apr 2, 2023",
@@ -88,8 +88,8 @@ const SchoolJobs = () => {
       id: 3,
       jobTitle: "English Literature Instructor",
       applicant: {
-        name: "Mr. David Johnson",
-        email: "david.johnson@example.com",
+        name: "Rohan Patil",
+        email: "abcde@example.com",
         avatar: "/placeholder.svg"
       },
       appliedDate: "Apr 4, 2023",
