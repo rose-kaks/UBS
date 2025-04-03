@@ -12,21 +12,21 @@ const upcomingClasses = [
     id: '1',
     title: 'Advanced Physics',
     date: 'Today, 2:00 PM',
-    teacher: 'Dr. Michael Chen',
+    teacher: 'Dr. Neeraj Kohli',
     subject: 'Physics'
   },
   {
     id: '2',
     title: 'Creative Writing Workshop',
     date: 'Tomorrow, 10:00 AM',
-    teacher: 'Ms. Sarah Johnson',
+    teacher: 'Ms. Neha Iyer',
     subject: 'English'
   },
   {
     id: '3',
     title: 'Calculus Review',
     date: 'April 4, 3:30 PM',
-    teacher: 'Mr. Robert Taylor',
+    teacher: 'Mr. Sanjay Jain',
     subject: 'Mathematics'
   }
 ];
