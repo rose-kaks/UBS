@@ -43,7 +43,7 @@ const Volunteers = () => {
       hours: 80,
       rating: 4.9,
       bio: "Introduces students to the world of coding in a fun and interactive way. She has conducted numerous workshops on digital literacy for rural schools."
-    },
+     },
     {
       id: 5,
       name: "Vandana Sharma",
@@ -51,9 +51,7 @@ const Volunteers = () => {
       role: "Physics and Astronomy",
       hours: 115,
       rating: 4.6,
-      bio: "  MSc in Physics, has worked with ISRO-backed educational programs and believes in making science hands-on and exciting for students.
-
-"
+      bio: "MSc in Physics, has worked with ISRO-backed educational programs and believes in making science hands-on and exciting for students."
     },
     {
       id: 6,
@@ -62,9 +60,7 @@ const Volunteers = () => {
       role: "Economics and Business Studies",
       hours: 134,
       rating: 4.8,
-      bio: "MBA in finance, simplifies economic concepts and promotes financial literacy among high school students, encouraging them to think critically about real-world economic issues.
-
-"
+      bio: "MBA in finance, simplifies economic concepts and promotes financial literacy among high school students, encouraging them to think critically about real-world economic issues."
     }
   ];
 
