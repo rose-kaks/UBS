@@ -23,7 +23,7 @@ const Index = () => {
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 mb-8">
               EdConnect brings together schools and volunteers to create enriching educational 
-              experiences for students across the country.
+              experiences for students across the Zilla Parishad Schools of Pune, Mumbai and Hyderabad.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="px-6">
@@ -196,8 +196,8 @@ const Index = () => {
                     <span className="font-semibold text-edconnect-orange">JD</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Dr. Jane Davis</p>
-                    <p className="text-sm text-muted-foreground">Principal, Lincoln High School</p>
+                    <p className="font-semibold">Dr. Kaweri Gambhir</p>
+                    <p className="text-sm text-muted-foreground">Principal, ZPHS, Kukatpally, Hyderabad</p>
                   </div>
                 </div>
               </CardContent>
@@ -221,8 +221,8 @@ const Index = () => {
                     <span className="font-semibold text-edconnect-orange">MS</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Mark Smith</p>
-                    <p className="text-sm text-muted-foreground">Software Engineer & Volunteer</p>
+                    <p className="font-semibold">Saksham Malhotra</p>
+                    <p className="text-sm text-muted-foreground">Volunteer, Software Engineer</p>
                   </div>
                 </div>
               </CardContent>
@@ -246,7 +246,7 @@ const Index = () => {
                     <span className="font-semibold text-edconnect-orange">AT</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Aisha Thompson</p>
+                    <p className="font-semibold">Sara Aggarwal</p>
                     <p className="text-sm text-muted-foreground">Student, Grade 11</p>
                   </div>
                 </div>
