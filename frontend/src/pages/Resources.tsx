@@ -37,26 +37,26 @@ const Resources = () => {
     volunteers: [
       {
         id: 1,
-        title: "Guide to Effective Online Teaching",
+        title: "Curriculum Class 12",
         type: "PDF",
         icon: FileText,
-        description: "Best practices for engaging students in a virtual classroom environment.",
+        description: "Collection of the Curriculum of all subjects of Class 12.",
         downloadLink: "#"
       },
       {
         id: 2,
-        title: "Educational Games for the Classroom",
+        title: "Curriculum Class 10",
         type: "PDF",
         icon: FileText,
-        description: "Collection of educational games that make learning fun and interactive.",
+        description: "Collection of the Curriculum of all subjects of Class 10.",
         downloadLink: "#"
       },
       {
         id: 3,
-        title: "Video: Creating Engaging Presentations",
+        title: "Educational Games for the Classroom.",
         type: "Video",
         icon: Video,
-        description: "Learn how to create presentations that captivate your students' attention.",
+        description: "A video showing the collection of educational games that make learning fun and interactive.",
         externalLink: "#"
       }
     ],
@@ -79,10 +79,10 @@ const Resources = () => {
       },
       {
         id: 3,
-        title: "Curriculum Planning Templates",
+        title: "Curriculum 2024-25",
         type: "PDF",
         icon: FileText,
-        description: "Ready-to-use templates for curriculum planning and development.",
+        description: "Government provided curriculum planning and development for the session 2024-25 for all classes.",
         downloadLink: "#"
       }
     ]
