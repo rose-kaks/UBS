@@ -8,26 +8,26 @@ import { Award, Users, School, Heart, Target, Lightbulb } from "lucide-react";
 const About = () => {
   const teamMembers = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Founder & CEO",
-      bio: "Former school principal with over 20 years in education, passionate about connecting schools with quality volunteer educators.",
+      name: "Dr. Supriya Deshmukh",
+      role: "Education Officer",
+      bio: "Former school principal with over 20 years in education, passionate about connecting schools with quality education.",
       image: "/placeholder.svg"
     },
     {
-      name: "Michael Chen",
-      role: "Chief Technology Officer",
+      name: "Sh. Prashant Bhosle",
+      role: "District Science Supervisor",
       bio: "Tech industry veteran who left Silicon Valley to help build tools that improve educational opportunities for all students.",
       image: "/placeholder.svg"
     },
     {
-      name: "Amara Patel",
-      role: "Director of Volunteer Relations",
-      bio: "Former teacher and volunteer coordinator who excels at matching skilled volunteers with the schools that need them most.",
+      name: "Smt. Meenakshi Patil",
+      role: "Director of Education Inspection",
+      bio: "Former teacher and volunteer coordinator who excels at matching skilled volunteers with the schools that need them most and ensuring that they work smoothly.",
       image: "/placeholder.svg"
     },
     {
-      name: "James Wilson",
-      role: "Educational Content Director",
+      name: "Sh. Naveen Goud",
+      role: "Superintendent",
       bio: "Curriculum developer and former professor dedicated to creating high-quality educational materials and training resources.",
       image: "/placeholder.svg"
     }
