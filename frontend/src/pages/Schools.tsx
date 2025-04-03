@@ -11,35 +11,35 @@ const Schools = () => {
   const schools = [
     {
       id: 1,
-      name: "Westside High School",
-      location: "Los Angeles, CA",
-      description: "A progressive high school with focus on STEM education and arts.",
+      name: "Zilla Parishad High School",
+      location: "Saroor Nagar, Hyderabad",
+      description: "Co-ed",
       image: "/placeholder.svg",
       programs: 12
     },
     {
       id: 2,
-      name: "Eastwood Elementary",
-      location: "Chicago, IL",
-      description: "Building a foundation for lifelong learning through project-based education.",
+      name: "Zilla Parishad High School",
+      location: "Champapet, Hyderabad",
+      description: "Co-ed",
       image: "/placeholder.svg",
       programs: 8
     },
     {
       id: 3,
-      name: "Central Middle School",
-      location: "Houston, TX",
-      description: "Empowering young minds through innovative teaching methods.",
+      name: "Zilla Parishad High School",
+      location: "Pedda Amberpet, Rangareddy",
+      description: "Co-ed, State Board",
       image: "/placeholder.svg",
-      programs: 15
+      programs: 25
     },
     {
       id: 4,
-      name: "Lakeside Academy",
-      location: "Seattle, WA",
-      description: "Where traditional learning meets modern technology and innovation.",
+      name: "Zilla Parishad Primary School",
+      location: "Talegaon, Pune",
+      description: "Co-ed",
       image: "/placeholder.svg",
-      programs: 10
+      programs: 15
     }
   ];
 
