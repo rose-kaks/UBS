@@ -22,7 +22,7 @@ const SchoolCurriculum = () => {
       modules: 12,
       materials: 36,
       volunteers: 8,
-      image: "/placeholder.svg"
+      image: "https://th.bing.com/th/id/OIP.vi4ElFKDGGe5DTKRaShziAHaE8?w=251&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const SchoolCurriculum = () => {
       modules: 15,
       materials: 42,
       volunteers: 6,
-      image: "/placeholder.svg"
+      image: "https://th.bing.com/th/id/OIP.i6E3WGODp8NgsPrt8RNZ1gHaHW?w=187&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ const SchoolCurriculum = () => {
       modules: 10,
       materials: 28,
       volunteers: 5,
-      image: "/placeholder.svg"
+      image: "https://th.bing.com/th/id/OIP.spVG7yliah8g_z_I0BacxQHaKB?w=103&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     },
     {
       id: 4,
@@ -49,7 +49,7 @@ const SchoolCurriculum = () => {
       modules: 14,
       materials: 32,
       volunteers: 4,
-      image: "/placeholder.svg"
+      image: "https://th.bing.com/th/id/OIP.9ljkAr_hegt4AHOLvzXXCgHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     }
   ];
 
