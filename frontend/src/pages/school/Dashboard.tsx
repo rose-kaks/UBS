@@ -11,21 +11,21 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 const volunteerApplications = [
   {
     id: '1',
-    name: 'Dr. Michael Chen',
+    name: 'Dr. Vinayak Hegde',
     expertise: 'Physics, Mathematics',
     appliedDate: 'March 30, 2025',
     image: '/placeholder.svg',
   },
   {
     id: '2',
-    name: 'Sarah Johnson',
+    name: 'Rekha Gowda',
     expertise: 'English Literature, Creative Writing',
     appliedDate: 'March 31, 2025',
     image: '/placeholder.svg',
   },
   {
     id: '3',
-    name: 'Robert Taylor',
+    name: 'Anjali Narayan',
     expertise: 'Computer Science, Web Development',
     appliedDate: 'April 1, 2025',
     image: '/placeholder.svg',
