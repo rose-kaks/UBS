@@ -10,57 +10,61 @@ const Volunteers = () => {
   const topVolunteers = [
     {
       id: 1,
-      name: "Alex Johnson",
+      name: "Dr. Arvind Deshmukh",
       avatar: "/placeholder.svg",
-      role: "Math Teacher",
+      role: "Mathematics and Science",
       hours: 156,
       rating: 4.9,
       bio: "Experienced math teacher with a passion for making complex concepts accessible to all students."
     },
     {
       id: 2,
-      name: "Sam Williams",
+      name: "Priya Nair",
       avatar: "/placeholder.svg",
-      role: "Science Educator",
+      role: "English and Phonics",
       hours: 142,
       rating: 4.8,
-      bio: "PhD in Physics with 10+ years of experience making science fun and interactive for students of all ages."
+      bio: "Specializes in early childhood education and phonics-based learning. She has worked with various NGOs to enhance reading and writing skills in rural schools."
     },
     {
       id: 3,
-      name: "Jamie Smith",
+      name: "Sanjay Kulkarni",
       avatar: "/placeholder.svg",
-      role: "Computer Science Expert",
+      role: "Social Studies and Marathi",
       hours: 128,
       rating: 4.7,
-      bio: "Software engineer who loves teaching coding and computational thinking to the next generation."
+      bio: "Passionate about preserving and teaching Marathi literature, he makes history come alive through storytelling and interactive activities"
     },
     {
       id: 4,
-      name: "Morgan Lee",
+      name: "Neha Iyer",
       avatar: "/placeholder.svg",
-      role: "English Tutor",
-      hours: 115,
+      role: "Computer Science",
+      hours: 80,
       rating: 4.9,
-      bio: "Literature enthusiast and published author who specializes in creative writing and literature analysis."
+      bio: "Introduces students to the world of coding in a fun and interactive way. She has conducted numerous workshops on digital literacy for rural schools."
     },
     {
       id: 5,
-      name: "Taylor Chen",
+      name: "Vandana Sharma",
       avatar: "/placeholder.svg",
-      role: "History Teacher",
-      hours: 98,
+      role: "Physics and Astronomy",
+      hours: 115,
       rating: 4.6,
-      bio: "History professor who brings the past to life through engaging storytelling and interactive lessons."
+      bio: "  MSc in Physics, has worked with ISRO-backed educational programs and believes in making science hands-on and exciting for students.
+
+"
     },
     {
       id: 6,
-      name: "Jordan Patel",
+      name: "Ananya Sen",
       avatar: "/placeholder.svg",
-      role: "Art Instructor",
-      hours: 87,
+      role: "Economics and Business Studies",
+      hours: 134,
       rating: 4.8,
-      bio: "Professional artist and designer who loves introducing students to various artistic mediums and techniques."
+      bio: "MBA in finance, simplifies economic concepts and promotes financial literacy among high school students, encouraging them to think critically about real-world economic issues.
+
+"
     }
   ];
 
