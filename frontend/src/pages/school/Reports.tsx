@@ -39,7 +39,7 @@ const SchoolReports = () => {
   const volunteersData = [
     {
       id: 1,
-      name: "Dr. Sarah Johnson",
+      name: "Dr. Vandana Sharma",
       subject: "Mathematics",
       hours: 58,
       classes: 12,
@@ -48,7 +48,7 @@ const SchoolReports = () => {
     },
     {
       id: 2,
-      name: "Mr. Michael Williams",
+      name: "Mr. Deepak Yadav",
       subject: "English Literature",
       hours: 42,
       classes: 8,
@@ -57,7 +57,7 @@ const SchoolReports = () => {
     },
     {
       id: 3,
-      name: "Ms. Emily Chen",
+      name: "Ms. Ananya Sen",
       subject: "Science",
       hours: 64,
       classes: 14,
@@ -66,7 +66,7 @@ const SchoolReports = () => {
     },
     {
       id: 4,
-      name: "Dr. Robert Lee",
+      name: "Dr. Akash Verma",
       subject: "Physics",
       hours: 36,
       classes: 7,
@@ -264,7 +264,7 @@ const SchoolReports = () => {
                       <div>
                         <p className="font-medium">New volunteer onboarded</p>
                         <p className="text-sm text-muted-foreground">
-                          Dr. James Wilson joined as a History volunteer.
+                          Dr. Akash Verma joined as a History volunteer.
                         </p>
                         <p className="mt-1 text-xs text-muted-foreground">Yesterday</p>
                       </div>
