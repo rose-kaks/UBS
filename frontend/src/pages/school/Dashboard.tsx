@@ -14,21 +14,21 @@ const volunteerApplications = [
     name: 'Dr. Vinayak Hegde',
     expertise: 'Physics, Mathematics',
     appliedDate: 'March 30, 2025',
-    image: '/placeholder.svg',
+    image: 'https://th.bing.com/th/id/OIP.EGSlamshXCYMY5Uwl2KKigHaE8?w=276&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7',
   },
   {
     id: '2',
     name: 'Rekha Gowda',
     expertise: 'English Literature, Creative Writing',
     appliedDate: 'March 31, 2025',
-    image: '/placeholder.svg',
+    image: 'https://th.bing.com/th/id/OIP.PY6I7354V_s7qd-qkCn8WAAAAA?w=131&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7',
   },
   {
     id: '3',
     name: 'Anjali Narayan',
     expertise: 'Computer Science, Web Development',
     appliedDate: 'April 1, 2025',
-    image: '/placeholder.svg',
+    image: 'https://th.bing.com/th/id/OIP.WZDy4wc9RIoXf_rEdv7GkgHaE8?w=294&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7',
   },
 ];
 
