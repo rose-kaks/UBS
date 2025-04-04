@@ -72,9 +72,13 @@ const StudentVideos = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Join a Class</h2>
             <p className="text-lg mb-6">Take your learning to the next level. Join our upcoming classes and enhance your skills with expert instructors!</p>
-            <Button className="px-8 py-3 text-lg bg-green-600 hover:bg-green-700 transition-all duration-300">
+            <Button 
+              className="px-8 py-3 text-lg bg-green-600 hover:bg-green-700 transition-all duration-300"
+              onClick={() => window.open('https://meet.google.com/', '_blank')}
+            >
               Join Now
             </Button>
+
           </div>
         </div>
 
