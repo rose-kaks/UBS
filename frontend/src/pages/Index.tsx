@@ -1,66 +1,67 @@
-
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Users, School, BookOpen, Star, Award, Calendar, Video, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Index = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-edconnect-beige/50 to-edconnect-beige-light/30 z-0" />
-        <div className="absolute right-0 top-0 w-full md:w-1/2 h-full bg-[url('/placeholder.svg')] bg-no-repeat bg-cover opacity-20 z-0" />
-        <div className="container relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Connect, Volunteer,
-              <span className="text-edconnect-orange block">Make an Impact</span>
+      <section className="relative py-28 md:py-32 min-h-screen overflow-hidden w-full bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-edconnect-beige/30 to-edconnect-beige-light/20 z-0" />
+        <img src="/HeroImage.png" alt="Hero Image" className="absolute inset-0 w-full h-full object-cover z-0 opacity-25" />
+        <div className="container relative z-10 flex flex-col justify-center items-center text-center">
+          <div className="max-w-3xl">
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-10">
+              {t('hero.title')}
+              <span className="text-edconnect-orange block">{t('hero.makeImpact')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/80 mb-8">
-              EdConnect brings together schools and volunteers to create enriching educational 
-              experiences for students across the country.
+            <p className="text-2xl md:text-3xl text-foreground/80 mb-8">
+              {t('hero.subtitle')}
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="px-6">
-                <Link to="/register">Get Started</Link>
+            <div className="flex flex-wrap gap-6 justify-center mb-8">
+              <Button asChild size="lg" className="px-8 py-4 text-xl">
+                <Link to="/register">{t('hero.getStarted')}</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="px-6">
-                <Link to="/schools">Find Schools</Link>
+              <Button asChild size="lg" variant="outline" className="px-8 py-4 text-xl">
+                <Link to="/schools">{t('hero.findSchools')}</Link>
               </Button>
             </div>
             
-            <div className="flex items-center gap-6 mt-12">
+            <div className="flex items-center gap-10 mt-6 justify-center">
               <div className="text-center">
                 <p className="text-3xl font-bold text-edconnect-orange">500+</p>
-                <p className="text-sm text-muted-foreground">Schools</p>
+                <p className="text-sm text-muted-foreground">{t('hero.stats.schools')}</p>
               </div>
-              <div className="h-10 border-r border-border" />
+              <div className="h-12 border-r border-border" />
               <div className="text-center">
                 <p className="text-3xl font-bold text-edconnect-orange">2,500+</p>
-                <p className="text-sm text-muted-foreground">Volunteers</p>
+                <p className="text-sm text-muted-foreground">{t('hero.stats.volunteers')}</p>
               </div>
-              <div className="h-10 border-r border-border" />
+              <div className="h-12 border-r border-border" />
               <div className="text-center">
                 <p className="text-3xl font-bold text-edconnect-orange">10,000+</p>
-                <p className="text-sm text-muted-foreground">Students Helped</p>
+                <p className="text-sm text-muted-foreground">{t('hero.stats.students')}</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* How It Works Section */}
       <section className="py-16 md:py-24 bg-edconnect-beige-light/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How EdConnect Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('howItWorks.title')}</h2>
             <p className="text-lg text-foreground/80">
-              Our platform makes it easy to connect schools with qualified volunteers to enhance the educational experience.
+              {t('howItWorks.description')}
             </p>
           </div>
           
@@ -70,12 +71,12 @@ const Index = () => {
                 <div className="h-12 w-12 rounded-full bg-edconnect-orange/10 flex items-center justify-center mb-4">
                   <School className="h-6 w-6 text-edconnect-orange" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">For Schools</h3>
+                <h3 className="text-xl font-semibold mb-2">{t('howItWorks.forSchools')}</h3>
                 <p className="text-foreground/80 mb-4">
-                  Register your school, submit your curriculum needs, and connect with qualified volunteers.
+                  {t('howItWorks.schoolsDescription')}
                 </p>
                 <Link to="/register" className="text-edconnect-orange font-medium inline-flex items-center hover:underline">
-                  Register as a School <ChevronRight className="h-4 w-4 ml-1" />
+                  {t('howItWorks.registerSchool')} <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
               </CardContent>
             </Card>
@@ -85,12 +86,12 @@ const Index = () => {
                 <div className="h-12 w-12 rounded-full bg-edconnect-orange/10 flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-edconnect-orange" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">For Volunteers</h3>
+                <h3 className="text-xl font-semibold mb-2">{t('howItWorks.forVolunteers')}</h3>
                 <p className="text-foreground/80 mb-4">
-                  Create your profile, browse opportunities, and share your expertise with students who need it.
+                  {t('howItWorks.volunteersDescription')}
                 </p>
                 <Link to="/register" className="text-edconnect-orange font-medium inline-flex items-center hover:underline">
-                  Become a Volunteer <ChevronRight className="h-4 w-4 ml-1" />
+                  {t('howItWorks.becomeVolunteer')} <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
               </CardContent>
             </Card>
@@ -100,12 +101,12 @@ const Index = () => {
                 <div className="h-12 w-12 rounded-full bg-edconnect-orange/10 flex items-center justify-center mb-4">
                   <BookOpen className="h-6 w-6 text-edconnect-orange" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">For Students</h3>
+                <h3 className="text-xl font-semibold mb-2">{t('howItWorks.forStudents')}</h3>
                 <p className="text-foreground/80 mb-4">
-                  Access quality educational content, attend live sessions, and learn from experienced professionals.
+                  {t('howItWorks.studentsDescription')}
                 </p>
                 <Link to="/register" className="text-edconnect-orange font-medium inline-flex items-center hover:underline">
-                  Join as a Student <ChevronRight className="h-4 w-4 ml-1" />
+                  {t('howItWorks.joinStudent')} <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
               </CardContent>
             </Card>
@@ -117,9 +118,9 @@ const Index = () => {
       <section className="py-16 md:py-24">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Platform Features</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('features.title')}</h2>
             <p className="text-lg text-foreground/80">
-              EdConnect offers a comprehensive set of tools to make educational volunteering seamless and effective.
+              {t('features.description')}
             </p>
           </div>
           
@@ -127,9 +128,9 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <Calendar className="h-10 w-10 text-edconnect-orange mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Class Scheduling</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('features.classScheduling')}</h3>
                 <p className="text-sm text-foreground/80">
-                  Intuitive calendar system for scheduling and managing live classes and sessions.
+                  {t('features.classSchedulingDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -137,9 +138,9 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <Video className="h-10 w-10 text-edconnect-orange mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Video Content</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('features.videoContent')}</h3>
                 <p className="text-sm text-foreground/80">
-                  Upload and access recorded video lessons to supplement live teaching.
+                  {t('features.videoContentDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -147,9 +148,9 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <Clock className="h-10 w-10 text-edconnect-orange mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Volunteer Tracking</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('features.volunteerTracking')}</h3>
                 <p className="text-sm text-foreground/80">
-                  Track volunteer hours, contributions, and impact with detailed analytics.
+                  {t('features.volunteerTrackingDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -157,9 +158,9 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <Award className="h-10 w-10 text-edconnect-orange mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Certificates</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('features.certificates')}</h3>
                 <p className="text-sm text-foreground/80">
-                  Generate certificates for volunteers to recognize their contributions.
+                  {t('features.certificatesDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -171,9 +172,9 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-edconnect-beige-light/30">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What People Are Saying</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('testimonials.title')}</h2>
             <p className="text-lg text-foreground/80">
-              Read about the experiences of schools, volunteers, and students using EdConnect.
+              {t('testimonials.description')}
             </p>
           </div>
           
@@ -181,23 +182,20 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                  ))}
                 </div>
                 <p className="italic text-foreground/80 mb-4">
-                  "As a school principal, EdConnect has revolutionized how we bring expert knowledge into our classrooms. 
-                  Our students love learning from professionals in various fields."
+                  {t('testimonials.quote1')}
                 </p>
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-edconnect-orange/20 flex items-center justify-center mr-3">
                     <span className="font-semibold text-edconnect-orange">JD</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Dr. Jane Davis</p>
-                    <p className="text-sm text-muted-foreground">Principal, Lincoln High School</p>
+                    <p className="font-semibold">{t('testimonials.name1')}</p>
+                    <p className="text-sm text-muted-foreground">{t('testimonials.role1')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -206,23 +204,20 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                  ))}
                 </div>
                 <p className="italic text-foreground/80 mb-4">
-                  "Volunteering through EdConnect has been incredibly rewarding. The platform makes it easy to 
-                  schedule sessions, and I love seeing the impact I'm making on students' education."
+                  {t('testimonials.quote2')}
                 </p>
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-edconnect-orange/20 flex items-center justify-center mr-3">
                     <span className="font-semibold text-edconnect-orange">MS</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Mark Smith</p>
-                    <p className="text-sm text-muted-foreground">Software Engineer & Volunteer</p>
+                    <p className="font-semibold">{t('testimonials.name2')}</p>
+                    <p className="text-sm text-muted-foreground">{t('testimonials.role2')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -231,23 +226,20 @@ const Index = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                  <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+                  ))}
                 </div>
                 <p className="italic text-foreground/80 mb-4">
-                  "Learning from real professionals has helped me understand what I want to do after graduation. 
-                  The volunteer sessions are engaging and have made difficult subjects much easier to grasp."
+                  {t('testimonials.quote3')}
                 </p>
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-edconnect-orange/20 flex items-center justify-center mr-3">
                     <span className="font-semibold text-edconnect-orange">AT</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Aisha Thompson</p>
-                    <p className="text-sm text-muted-foreground">Student, Grade 11</p>
+                    <p className="font-semibold">{t('testimonials.name3')}</p>
+                    <p className="text-sm text-muted-foreground">{t('testimonials.role3')}</p>
                   </div>
                 </div>
               </CardContent>
@@ -262,17 +254,17 @@ const Index = () => {
           <div className="bg-gradient-to-r from-edconnect-orange to-edconnect-orange-light rounded-xl p-8 md:p-12">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Make a Difference?
+                {t('cta.title')}
               </h2>
               <p className="text-white/90 text-lg mb-8">
-                Join our community of schools, volunteers, and students to create better educational experiences today.
+                {t('cta.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" variant="secondary" className="bg-white text-edconnect-orange hover:bg-white/90">
-                  <Link to="/register">Sign Up Now</Link>
+                  <Link to="/register">{t('cta.signUp')}</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  <Link to="/about">Learn More</Link>
+                  <Link to="/about">{t('cta.learnMore')}</Link>
                 </Button>
               </div>
             </div>

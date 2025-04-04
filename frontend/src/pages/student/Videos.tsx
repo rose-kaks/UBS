@@ -1,240 +1,146 @@
-
+import { useState, useEffect } from "react";
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Search, BookOpen, Clock, Calendar, ThumbsUp, Eye, MessageSquare, Play } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
+import axios from "axios";
 
 const StudentVideos = () => {
-  const recommendedVideos = [
-    {
-      id: 1,
-      title: "Solving Quadratic Equations",
-      thumbnail: "/placeholder.svg",
-      subject: "Mathematics",
-      topic: "Algebra",
-      duration: "32 min",
-      date: "Mar 15, 2023",
-      views: 1246,
-      likes: 342,
-      instructor: "Dr. Sarah Johnson"
-    },
-    {
-      id: 2,
-      title: "Understanding Chemical Bonds",
-      thumbnail: "/placeholder.svg",
-      subject: "Chemistry",
-      topic: "Chemical Bonding",
-      duration: "45 min",
-      date: "Mar 20, 2023",
-      views: 987,
-      likes: 256,
-      instructor: "Prof. Michael Chen"
-    },
-    {
-      id: 3,
-      title: "Literary Devices in Shakespeare",
-      thumbnail: "/placeholder.svg",
-      subject: "English Literature",
-      topic: "Shakespeare",
-      duration: "38 min",
-      date: "Mar 22, 2023",
-      views: 765,
-      likes: 189,
-      instructor: "Ms. Emily Singh"
-    },
-    {
-      id: 4,
-      title: "The French Revolution",
-      thumbnail: "/placeholder.svg",
-      subject: "History",
-      topic: "European History",
-      duration: "52 min",
-      date: "Mar 25, 2023",
-      views: 654,
-      likes: 142,
-      instructor: "Prof. James Wilson"
-    }
+  const youtubeVideos = [
+    "https://www.youtube.com/embed/IjdVNCDzbYE",  // First video
+    "https://www.youtube.com/embed/J4QbQylnnos",  // Second video link
+    "https://www.youtube.com/embed/7y1zxYprS3w",  // Third video
+    "https://www.youtube.com/embed/itMII7Z-hnA",  // Fourth video
   ];
-  
-  const recentVideos = [
-    {
-      id: 5,
-      title: "Newton's Laws of Motion",
-      thumbnail: "/placeholder.svg",
-      subject: "Physics",
-      topic: "Classical Mechanics",
-      duration: "47 min",
-      date: "Mar 28, 2023",
-      viewed: "85%",
-      instructor: "Dr. Robert Lee"
-    },
-    {
-      id: 6,
-      title: "Introduction to Cellular Biology",
-      thumbnail: "/placeholder.svg",
-      subject: "Biology",
-      topic: "Cell Structure",
-      duration: "41 min",
-      date: "Mar 30, 2023",
-      viewed: "100%",
-      instructor: "Dr. Maria Rodriguez"
+
+  const [notes, setNotes] = useState(Array(youtubeVideos.length).fill("Loading notes..."));
+  const [loading, setLoading] = useState(Array(youtubeVideos.length).fill(false)); // Track loading state
+  const [selectedLanguage, setSelectedLanguage] = useState("en");  // Default to English
+
+  const getVideoId = (embedUrl) => {
+    const match = embedUrl.match(/embed\/([0-9A-Za-z_-]{11})/);
+    return match ? match[1] : null;
+  };
+
+  const fetchNotes = async (videoUrl, index) => {
+    const videoId = getVideoId(videoUrl);
+    if (!videoId) return;
+
+    setLoading((prevState) => {
+      const updatedLoading = [...prevState];
+      updatedLoading[index] = true; // Set loading to true for the specific video
+      return updatedLoading;
+    });
+
+    try {
+      const response = await axios.post("http://localhost:5001/youtube_summary", {
+        youtubeUrl: `https://www.youtube.com/watch?v=${videoId}`,
+        language: selectedLanguage,  // Send the selected language
+      });
+
+      setNotes((prevNotes) => {
+        const updatedNotes = [...prevNotes];
+        updatedNotes[index] = response.data.summary || "No notes available.";
+        return updatedNotes;
+      });
+    } catch (error) {
+      console.error("Error fetching notes:", error);
+      setNotes((prevNotes) => {
+        const updatedNotes = [...prevNotes];
+        updatedNotes[index] = "Failed to load notes.";
+        return updatedNotes;
+      });
+    } finally {
+      setLoading((prevState) => {
+        const updatedLoading = [...prevState];
+        updatedLoading[index] = false; // Set loading to false after the API call
+        return updatedLoading;
+      });
     }
-  ];
+  };
+
+  const handleLanguageChange = (e) => {
+    setSelectedLanguage(e.target.value);  // Set the selected language
+  };
 
   return (
     <DashboardLayout>
       <div className="space-y-6">
+        
+        {/* Join Class Section at the Top */}
+        <div className="bg-blue-600 text-white py-8 rounded-md shadow-md">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Join a Class</h2>
+            <p className="text-lg mb-6">Take your learning to the next level. Join our upcoming classes and enhance your skills with expert instructors!</p>
+            <Button className="px-8 py-3 text-lg bg-green-600 hover:bg-green-700 transition-all duration-300">
+              Join Now
+            </Button>
+          </div>
+        </div>
+
+        {/* Search & Video Section */}
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Video Library</h1>
-            <p className="text-muted-foreground">
-              Access educational videos and recorded lectures
-            </p>
+            <p className="text-muted-foreground">Access educational videos and recorded lectures</p>
           </div>
           <div className="relative max-w-md">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input 
-              type="search" 
-              placeholder="Search videos..." 
-              className="pl-8" 
-            />
+            <Input type="search" placeholder="Search videos..." className="pl-8" />
           </div>
         </div>
-        
-        <Tabs defaultValue="recommended">
-          <TabsList className="w-full justify-start">
-            <TabsTrigger value="recommended">Recommended</TabsTrigger>
-            <TabsTrigger value="recently-watched">Recently Watched</TabsTrigger>
-            <TabsTrigger value="favorites">Favorites</TabsTrigger>
-            <TabsTrigger value="all">All Videos</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="recommended" className="mt-6">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {recommendedVideos.map((video) => (
-                <Card key={video.id} className="overflow-hidden">
-                  <div className="relative">
-                    <img 
-                      src={video.thumbnail} 
-                      alt={video.title} 
-                      className="h-40 w-full object-cover" 
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity hover:opacity-100">
-                      <Button variant="outline" size="icon" className="h-12 w-12 rounded-full bg-white/20 text-white">
-                        <Play className="h-6 w-6" />
-                      </Button>
-                    </div>
-                    <div className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-1 text-xs text-white">
-                      {video.duration}
-                    </div>
-                  </div>
-                  <CardHeader className="p-4 pb-0">
-                    <CardTitle className="line-clamp-1 text-base">{video.title}</CardTitle>
-                    <CardDescription>{video.instructor}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-4 pt-2">
-                    <div className="flex flex-wrap items-center gap-2 text-xs">
-                      <Badge variant="outline" className="text-xs">{video.subject}</Badge>
-                      <Badge variant="outline" className="text-xs">{video.topic}</Badge>
-                    </div>
-                    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-                      <div className="flex items-center">
-                        <Calendar className="mr-1 h-3 w-3" />
-                        <span>{video.date}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Eye className="mr-1 h-3 w-3" />
-                        <span>{video.views}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <ThumbsUp className="mr-1 h-3 w-3" />
-                        <span>{video.likes}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="p-4 pt-0">
-                    <Button variant="outline" className="w-full">Watch Video</Button>
-                  </CardFooter>
-                </Card>
-              ))}
+
+        {/* Language Selector */}
+        <div className="my-4">
+          <label htmlFor="language-select" className="mr-2">Select Language:</label>
+          <select
+            id="language-select"
+            value={selectedLanguage}
+            onChange={handleLanguageChange}
+            className="p-2 border rounded"
+          >
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            {/* Add more languages as needed */}
+          </select>
+        </div>
+
+        {/* Video Display with Notes */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {youtubeVideos.map((videoUrl, index) => (
+            <div key={index} className="relative w-full overflow-hidden rounded-lg shadow-lg bg-white p-4">
+              <iframe
+                width="100%"
+                height="280"
+                src={videoUrl}
+                title={`YouTube Video ${index + 1}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full aspect-video rounded-lg"
+              ></iframe>
+              
+              {/* Notes Section */}
+              <div className="mt-4 p-3 bg-gray-100 border border-gray-300 rounded-md text-gray-700">
+                <h3 className="text-lg font-semibold text-gray-900">Notes:</h3>
+                <p className="text-sm mt-2">{notes[index]}</p>
+              </div>
+              
+              {/* Generate Notes Button */}
+              <Button
+                onClick={() => fetchNotes(videoUrl, index)}
+                className="mt-4 px-6 py-3 text-lg bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300"
+                disabled={loading[index]} // Disable button if loading
+              >
+                {loading[index] ? (
+                  <span className="animate-spin">🔄</span> // Spinner while loading
+                ) : (
+                  "Generate Notes"
+                )}
+              </Button>
             </div>
-          </TabsContent>
-          
-          <TabsContent value="recently-watched" className="mt-6">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              {recentVideos.map((video) => (
-                <Card key={video.id} className="overflow-hidden">
-                  <div className="flex flex-col md:flex-row">
-                    <div className="relative md:w-1/3">
-                      <img 
-                        src={video.thumbnail} 
-                        alt={video.title} 
-                        className="h-48 w-full object-cover md:h-full" 
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity hover:opacity-100">
-                        <Button variant="outline" size="icon" className="h-12 w-12 rounded-full bg-white/20 text-white">
-                          <Play className="h-6 w-6" />
-                        </Button>
-                      </div>
-                      <div className="absolute bottom-2 right-2 rounded bg-black/70 px-2 py-1 text-xs text-white">
-                        {video.duration}
-                      </div>
-                    </div>
-                    <div className="flex flex-1 flex-col p-4">
-                      <h3 className="font-medium">{video.title}</h3>
-                      <p className="text-sm text-muted-foreground">{video.instructor}</p>
-                      
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
-                        <Badge variant="outline">{video.subject}</Badge>
-                        <Badge variant="outline">{video.topic}</Badge>
-                      </div>
-                      
-                      <div className="mt-4 space-y-2 text-sm">
-                        <div className="flex items-center">
-                          <BookOpen className="mr-2 h-4 w-4 text-muted-foreground" />
-                          <span>Watched: {video.viewed}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Calendar className="mr-2 h-4 w-4 text-muted-foreground" />
-                          <span>Date: {video.date}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
-                          <span>Duration: {video.duration}</span>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-auto flex flex-wrap gap-2 pt-4">
-                        <Button>Continue Watching</Button>
-                        <Button variant="outline">
-                          <MessageSquare className="mr-2 h-4 w-4" />
-                          Discussion
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="favorites">
-            <div className="py-8 text-center">
-              <p className="text-muted-foreground">You haven't saved any videos as favorites yet.</p>
-              <Button className="mt-4">Browse Videos</Button>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="all">
-            <div className="py-8 text-center">
-              <p className="text-muted-foreground">The complete video library will be displayed here.</p>
-              <Button className="mt-4">Browse All Videos</Button>
-            </div>
-          </TabsContent>
-        </Tabs>
+          ))}
+        </div>
       </div>
     </DashboardLayout>
   );

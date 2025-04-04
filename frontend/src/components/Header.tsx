@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
@@ -12,22 +11,23 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Menu, LogOut, User, BookOpen, Users, School, Calendar, Award, Video, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
+  const { t, i18n } = useTranslation();
   const { user, logout, isAuthenticated } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Find Schools', href: '/schools' },
-    { name: 'Volunteers', href: '/volunteers' },
-    { name: 'Events', href: '/events' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('header.home'), href: '/' },
+    { name: t('header.findSchools'), href: '/schools' },
+    { name: t('header.volunteers'), href: '/volunteers' },
+    { name: t('header.events'), href: '/events' },
+    { name: t('header.resources'), href: '/resources' },
+    { name: t('header.about'), href: '/about' },
+    { name: t('header.contact'), href: '/contact' },
   ];
 
-  // Dashboard link based on user role
   const dashboardLink = user?.role === 'student' 
     ? '/student/dashboard' 
     : user?.role === 'volunteer' 
@@ -56,7 +56,7 @@ export const Header = () => {
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <Link
-              key={item.name}
+              key={item.href}
               to={item.href}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
@@ -66,6 +66,22 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
+          {/* Language Switcher */}
+          <div className="hidden md:flex gap-2 mr-4">
+            <button 
+              onClick={() => i18n.changeLanguage('en')}
+              className={`px-2 py-1 rounded ${i18n.language === 'en' ? 'bg-edconnect-orange/10 text-edconnect-orange font-medium' : 'text-muted-foreground'}`}
+            >
+              EN
+            </button>
+            <button 
+              onClick={() => i18n.changeLanguage('hi')}
+              className={`px-2 py-1 rounded ${i18n.language === 'hi' ? 'bg-edconnect-orange/10 text-edconnect-orange font-medium' : 'text-muted-foreground'}`}
+            >
+              हिं
+            </button>
+          </div>
+
           {isAuthenticated ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -91,13 +107,13 @@ export const Header = () => {
                 <DropdownMenuItem asChild>
                   <Link to={dashboardLink} className="cursor-pointer flex items-center">
                     <UserIcon className="mr-2 h-4 w-4" />
-                    <span>Dashboard</span>
+                    <span>{t('header.dashboard')}</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/profile" className="cursor-pointer flex items-center">
                     <User className="mr-2 h-4 w-4" />
-                    <span>Profile</span>
+                    <span>{t('header.profile')}</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -106,17 +122,17 @@ export const Header = () => {
                   className="cursor-pointer text-destructive focus:text-destructive"
                 >
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  <span>{t('header.logout')}</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
             <div className="hidden md:flex items-center gap-4">
               <Button asChild variant="ghost">
-                <Link to="/login">Log in</Link>
+                <Link to="/login">{t('header.login')}</Link>
               </Button>
               <Button asChild>
-                <Link to="/register">Sign up</Link>
+                <Link to="/register">{t('header.signup')}</Link>
               </Button>
             </div>
           )}
@@ -136,10 +152,24 @@ export const Header = () => {
       {/* Mobile navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden p-4 pt-0 bg-background border-b">
+          <div className="flex justify-end gap-2 mb-4">
+            <button 
+              onClick={() => i18n.changeLanguage('en')}
+              className={`px-3 py-1 rounded ${i18n.language === 'en' ? 'bg-edconnect-orange/10 text-edconnect-orange font-medium' : 'text-muted-foreground'}`}
+            >
+              English
+            </button>
+            <button 
+              onClick={() => i18n.changeLanguage('hi')}
+              className={`px-3 py-1 rounded ${i18n.language === 'hi' ? 'bg-edconnect-orange/10 text-edconnect-orange font-medium' : 'text-muted-foreground'}`}
+            >
+              हिंदी
+            </button>
+          </div>
           <nav className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <Link
-                key={item.name}
+                key={item.href}
                 to={item.href}
                 className="py-2 px-3 hover:bg-muted rounded-md"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -154,14 +184,14 @@ export const Header = () => {
                   className="py-2 px-3 hover:bg-muted rounded-md"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Log in
+                  {t('header.login')}
                 </Link>
                 <Link
                   to="/register"
                   className="py-2 px-3 bg-primary text-primary-foreground rounded-md flex justify-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Sign up
+                  {t('header.signup')}
                 </Link>
               </>
             )}

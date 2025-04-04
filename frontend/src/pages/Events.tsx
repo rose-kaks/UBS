@@ -7,8 +7,13 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MapPin, Filter } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Volume2 } from "lucide-react";
+
 
 const Events = () => {
+  const [speakingId, setSpeakingId] = useState(null);
+
   const upcomingEvents = [
     {
       id: 1,
@@ -55,6 +60,21 @@ const Events = () => {
       image: "/placeholder.svg"
     }
   ];
+
+  const handleSpeak = (event) => {
+    if (speakingId === event.id) {
+      window.speechSynthesis.cancel();
+      setSpeakingId(null);
+      return;
+    }
+
+    const text = `${event.title}. ${event.date} at ${event.time}. Location: ${event.location}. Description: ${event.description}`;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.onend = () => setSpeakingId(null);
+
+    window.speechSynthesis.speak(utterance);
+    setSpeakingId(event.id);
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -134,6 +154,9 @@ const Events = () => {
                           <Link to={`/events/${event.id}`}>Details</Link>
                         </Button>
                         <Button variant="outline" className="w-1/2">Register</Button>
+                        <Button variant="ghost" className="w-1/3" onClick={() => handleSpeak(event)}>
+                          <Volume2 className="h-4 w-4" />
+                        </Button>
                       </CardFooter>
                     </Card>
                   ))}
