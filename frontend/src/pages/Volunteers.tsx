@@ -43,7 +43,7 @@ const Volunteers = () => {
       hours: 80,
       rating: 4.9,
       bio: "Introduces students to the world of coding in a fun and interactive way. She has conducted numerous workshops on digital literacy for rural schools."
-    },
+     },
     {
       id: 5,
       name: "Vandana Sharma",

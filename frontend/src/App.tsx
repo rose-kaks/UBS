@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+import Chatbot from "./components/ui/Chatbot"; // Import Chatbot
 
 // Public Pages
 import Index from "./pages/Index";
@@ -71,158 +71,35 @@ const App = () => (
             } />
             
             {/* Student Routes */}
-            <Route 
-              path="/student/dashboard" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentDashboard />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/student/classes" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentClasses />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/student/curriculum" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentCurriculum />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/student/videos" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentVideos />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/student/assignments" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentAssignments />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/student/notes" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentNotes />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/student/feedback" 
-              element={
-                <ProtectedRoute allowedRoles={['student']}>
-                  <StudentFeedback />
-                </ProtectedRoute>
-              } 
-            />
+            <Route path="/student/dashboard" element={<ProtectedRoute allowedRoles={['student']}><StudentDashboard /></ProtectedRoute>} />
+            <Route path="/student/classes" element={<ProtectedRoute allowedRoles={['student']}><StudentClasses /></ProtectedRoute>} />
+            <Route path="/student/curriculum" element={<ProtectedRoute allowedRoles={['student']}><StudentCurriculum /></ProtectedRoute>} />
+            <Route path="/student/videos" element={<ProtectedRoute allowedRoles={['student']}><StudentVideos /></ProtectedRoute>} />
+            <Route path="/student/assignments" element={<ProtectedRoute allowedRoles={['student']}><StudentAssignments /></ProtectedRoute>} />
+            <Route path="/student/notes" element={<ProtectedRoute allowedRoles={['student']}><StudentNotes /></ProtectedRoute>} />
+            <Route path="/student/feedback" element={<ProtectedRoute allowedRoles={['student']}><StudentFeedback /></ProtectedRoute>} />
             
             {/* Volunteer Routes */}
-            <Route 
-              path="/volunteer/dashboard" 
-              element={
-                <ProtectedRoute allowedRoles={['volunteer']}>
-                  <VolunteerDashboard />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/volunteer/classes" 
-              element={
-                <ProtectedRoute allowedRoles={['volunteer']}>
-                  <VolunteerClasses />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/volunteer/curriculum" 
-              element={
-                <ProtectedRoute allowedRoles={['volunteer']}>
-                  <VolunteerCurriculum />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/volunteer/certificates" 
-              element={
-                <ProtectedRoute allowedRoles={['volunteer']}>
-                  <VolunteerCertificates />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/volunteer/messaging" 
-              element={
-                <ProtectedRoute allowedRoles={['volunteer']}>
-                  <VolunteerMessaging />
-                </ProtectedRoute>
-              } 
-            />
+            <Route path="/volunteer/dashboard" element={<ProtectedRoute allowedRoles={['volunteer']}><VolunteerDashboard /></ProtectedRoute>} />
+            <Route path="/volunteer/classes" element={<ProtectedRoute allowedRoles={['volunteer']}><VolunteerClasses /></ProtectedRoute>} />
+            <Route path="/volunteer/curriculum" element={<ProtectedRoute allowedRoles={['volunteer']}><VolunteerCurriculum /></ProtectedRoute>} />
+            <Route path="/volunteer/certificates" element={<ProtectedRoute allowedRoles={['volunteer']}><VolunteerCertificates /></ProtectedRoute>} />
+            <Route path="/volunteer/messaging" element={<ProtectedRoute allowedRoles={['volunteer']}><VolunteerMessaging /></ProtectedRoute>} />
             
             {/* School Routes */}
-            <Route 
-              path="/school/dashboard" 
-              element={
-                <ProtectedRoute allowedRoles={['school']}>
-                  <SchoolDashboard />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/school/curriculum" 
-              element={
-                <ProtectedRoute allowedRoles={['school']}>
-                  <SchoolCurriculum />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/school/assignments" 
-              element={
-                <ProtectedRoute allowedRoles={['school']}>
-                  <SchoolAssignments />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/school/reports" 
-              element={
-                <ProtectedRoute allowedRoles={['school']}>
-                  <SchoolReports />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/school/volunteers" 
-              element={
-                <ProtectedRoute allowedRoles={['school']}>
-                  <SchoolVolunteers />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/school/jobs" 
-              element={
-                <ProtectedRoute allowedRoles={['school']}>
-                  <SchoolJobs />
-                </ProtectedRoute>
-              } 
-            />
+            <Route path="/school/dashboard" element={<ProtectedRoute allowedRoles={['school']}><SchoolDashboard /></ProtectedRoute>} />
+            <Route path="/school/curriculum" element={<ProtectedRoute allowedRoles={['school']}><SchoolCurriculum /></ProtectedRoute>} />
+            <Route path="/school/assignments" element={<ProtectedRoute allowedRoles={['school']}><SchoolAssignments /></ProtectedRoute>} />
+            <Route path="/school/reports" element={<ProtectedRoute allowedRoles={['school']}><SchoolReports /></ProtectedRoute>} />
+            <Route path="/school/volunteers" element={<ProtectedRoute allowedRoles={['school']}><SchoolVolunteers /></ProtectedRoute>} />
+            <Route path="/school/jobs" element={<ProtectedRoute allowedRoles={['school']}><SchoolJobs /></ProtectedRoute>} />
             
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          
+          {/* Chatbot component added here */}
+          <Chatbot />
         </BrowserRouter>
       </TooltipProvider>
     </AuthProvider>
