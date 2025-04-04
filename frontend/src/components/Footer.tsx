@@ -87,14 +87,13 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-edconnect-orange shrink-0 mt-0.5" />
                 <span className="text-foreground/70">
-                  EdConnect Hyderabad,
-                  Level A, HITEC Business Tower,
-                  Hyderabad - 500123
+                  123 Education Lane<br />
+                  Knowledge City, ED 54321
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <PhoneCall className="h-5 w-5 text-edconnect-orange" />
-                <span className="text-foreground/70">+91 1234567890</span>
+                <span className="text-foreground/70">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-edconnect-orange" />
