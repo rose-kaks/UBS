@@ -154,9 +154,12 @@ const VolunteerClasses = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="flex gap-2">
-                  <Button className="w-full md:w-auto">
-                    Start Class
-                  </Button>
+                <Button 
+                  className="px-8 py-3 text-lg bg-green-600 hover:bg-green-700 transition-all duration-300"
+                  onClick={() => window.open('https://meet.google.com/', '_blank')}
+                >
+                  Start Class
+                </Button>
                   <Button variant="outline" className="w-full md:w-auto">
                     <FileText className="mr-2 h-4 w-4" />
                     Class Materials
