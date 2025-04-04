@@ -16,7 +16,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative py-28 md:py-32 min-h-screen overflow-hidden w-full bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-edconnect-beige/30 to-edconnect-beige-light/20 z-0" />
-        <img src="/HeroImage.png" alt="Hero Image" className="absolute inset-0 w-full h-full object-cover z-0 opacity-25" />
+        <img src="frontend/hero.jpeg" alt="Hero Image" className="absolute inset-0 w-full h-full object-cover z-0 opacity-25" />
         <div className="container relative z-10 flex flex-col justify-center items-center text-center">
           <div className="max-w-3xl">
             <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-10">
