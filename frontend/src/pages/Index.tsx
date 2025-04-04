@@ -196,6 +196,7 @@ const Index = () => {
                   <div>
                     <p className="font-semibold">{t('testimonials.name1')}</p>
                     <p className="text-sm text-muted-foreground">{t('testimonials.role1')}</p>
+
                   </div>
                 </div>
               </CardContent>

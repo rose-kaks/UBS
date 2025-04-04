@@ -21,19 +21,19 @@ const StudentAssignments = () => {
       dueTime: "11:59 PM",
       status: "not-started",
       submissionType: "file",
-      teacher: "Ms. Johnson"
+      teacher: "Ms. Shriya"
     },
     {
       id: 2,
-      title: "Essay: Character Analysis in Macbeth",
+      title: "Essay: Is AI a boon or a bay?",
       subject: "English Literature",
-      topic: "Shakespeare",
+      topic: "Current Affairs",
       dueDate: "Apr 18, 2023",
       dueTime: "11:59 PM",
       status: "in-progress",
       progress: 60,
       submissionType: "document",
-      teacher: "Mr. Williams"
+      teacher: "Mr. Praveen"
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ const StudentAssignments = () => {
       dueTime: "11:59 PM",
       status: "not-started",
       submissionType: "file",
-      teacher: "Dr. Martinez"
+      teacher: "Ms. Jenny"
     }
   ];
   
@@ -59,7 +59,7 @@ const StudentAssignments = () => {
       status: "completed",
       grade: "95%",
       feedback: "Excellent work on the force calculations!",
-      teacher: "Dr. Lee"
+      teacher: "Dr. Neeraj"
     },
     {
       id: 5,
@@ -71,19 +71,19 @@ const StudentAssignments = () => {
       status: "completed",
       grade: "88%",
       feedback: "Good work, but add more details on European events.",
-      teacher: "Mr. Wilson"
+      teacher: "Mrs. Samaira Gautam"
     }
   ];
   
   const lateAssignments = [
     {
       id: 6,
-      title: "Spanish Vocabulary Quiz",
-      subject: "Spanish",
+      title: "English Vocabulary Quiz",
+      subject: "English",
       topic: "Basic Vocabulary",
       dueDate: "Mar 15, 2023",
       status: "late",
-      teacher: "Mrs. Rodriguez"
+      teacher: "Mrs. Jasmine"
     }
   ];
 
