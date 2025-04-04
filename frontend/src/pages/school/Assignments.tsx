@@ -24,7 +24,7 @@ const SchoolAssignments = () => {
       dueTime: "11:59 PM",
       status: "Active",
       submissionType: "file",
-      teacher: "Dr. Sarah Johnson",
+      teacher: "Dr. Priya Nair",
       submissions: {
         total: 28,
         submitted: 10,
@@ -40,7 +40,7 @@ const SchoolAssignments = () => {
       dueTime: "11:59 PM",
       status: "Active",
       submissionType: "document",
-      teacher: "Mr. Michael Williams",
+      teacher: "Mr. Deepak Yadav",
       submissions: {
         total: 26,
         submitted: 8,
@@ -56,7 +56,7 @@ const SchoolAssignments = () => {
       dueTime: "11:59 PM",
       status: "Scheduled",
       submissionType: "file",
-      teacher: "Ms. Emily Chen",
+      teacher: "Ms. Neha Iyer",
       submissions: {
         total: 30,
         submitted: 0,
@@ -71,7 +71,7 @@ const SchoolAssignments = () => {
       dueDate: "Mar 25, 2023",
       status: "Completed",
       submissionType: "online",
-      teacher: "Dr. Robert Lee",
+      teacher: "Dr. Neeraj Kohli",
       submissions: {
         total: 28,
         submitted: 28,
@@ -81,10 +81,10 @@ const SchoolAssignments = () => {
   ];
   
   const teacherOptions = [
-    { id: 1, name: "Dr. Sarah Johnson", subject: "Mathematics" },
-    { id: 2, name: "Mr. Michael Williams", subject: "English Literature" },
-    { id: 3, name: "Ms. Emily Chen", subject: "Chemistry" },
-    { id: 4, name: "Dr. Robert Lee", subject: "Physics" }
+    { id: 1, name: "Dr. Priya Nair", subject: "Mathematics" },
+    { id: 2, name: "Mr. Deepak Yadav", subject: "English Literature" },
+    { id: 3, name: "Ms. Neha Iyer", subject: "Chemistry" },
+    { id: 4, name: "Dr. Neeraj Kohli", subject: "Physics" }
   ];
   
   const classOptions = [
