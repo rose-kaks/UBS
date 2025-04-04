@@ -18,7 +18,7 @@ const StudentClasses = () => {
       title: "Algebra Fundamentals",
       date: "Apr 5, 2023",
       time: "3:00 PM - 4:30 PM",
-      teacher: "Ms. Johnson",
+      teacher: "Ms. Neha Iyer",
       subject: "Mathematics",
       type: "Live Class",
       description: "Covering equations, variables, and basic algebraic operations."
@@ -28,20 +28,20 @@ const StudentClasses = () => {
       title: "Introduction to Chemical Reactions",
       date: "Apr 8, 2023",
       time: "2:00 PM - 3:30 PM",
-      teacher: "Mr. Chen",
+      teacher: "Mr. Sanjay Kulkarni",
       subject: "Chemistry",
       type: "Live Class",
       description: "Understanding the basics of chemical reactions and equations."
     },
     {
       id: 3,
-      title: "Shakespeare's Macbeth",
+      title: "Shakespeare's Poems",
       date: "Apr 12, 2023",
       time: "1:00 PM - 2:30 PM",
-      teacher: "Mrs. Patel",
+      teacher: "Mrs. Ananya Sen",
       subject: "English Literature",
       type: "Discussion",
-      description: "Analyzing themes and characters in Shakespeare's tragedy."
+      description: "Analyzing themes and characters in Shakespeare's masterpieces."
     }
   ];
   
@@ -51,7 +51,7 @@ const StudentClasses = () => {
       title: "Introduction to Physics",
       date: "Mar 28, 2023",
       time: "3:00 PM - 4:30 PM",
-      teacher: "Dr. Martinez",
+      teacher: "Dr. Neeraj",
       subject: "Physics",
       type: "Recorded",
       description: "Fundamental concepts of motion and forces.",
@@ -64,7 +64,7 @@ const StudentClasses = () => {
       title: "World War II Overview",
       date: "Mar 25, 2023",
       time: "2:00 PM - 3:30 PM",
-      teacher: "Mr. Wilson",
+      teacher: "Mr. Akash Verma",
       subject: "History",
       type: "Recorded",
       description: "Key events and impact of World War II.",

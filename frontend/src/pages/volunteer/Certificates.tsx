@@ -10,20 +10,20 @@ const VolunteerCertificates = () => {
     {
       id: 1,
       title: "Mathematics Teaching Excellence",
-      issueDate: "March 15, 2023",
-      school: "Westside High School",
+      issueDate: "March 15, 2025",
+      school: "ZPHC, Pune",
       hours: 50,
       description: "Awarded for exceptional contributions to mathematics education and student success.",
-      image: "/placeholder.svg"
+      image: "https://th.bing.com/th/id/OIP.lzPG3FNUH-R9wUgz1xgHUQHaHa?w=182&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     },
     {
       id: 2,
       title: "Science Education Contribution",
-      issueDate: "February 10, 2023",
-      school: "Central Middle School",
+      issueDate: "February 10, 2025",
+      school: "ZPHC, Mumbai",
       hours: 35,
       description: "Recognition for innovative approaches to teaching science concepts.",
-      image: "/placeholder.svg"
+      image: "https://th.bing.com/th/id/OIP.lzPG3FNUH-R9wUgz1xgHUQHaHa?w=182&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     }
   ];
   
@@ -34,7 +34,7 @@ const VolunteerCertificates = () => {
       progress: 80,
       hoursCompleted: 40,
       hoursRequired: 50,
-      school: "Eastwood Elementary",
+      school: "ZPHC, Pune",
       description: "Certificate for excellence in teaching literature and writing skills."
     },
     {
@@ -43,7 +43,7 @@ const VolunteerCertificates = () => {
       progress: 60,
       hoursCompleted: 30,
       hoursRequired: 50,
-      school: "Lakeside Academy",
+      school: "ZPHC, Hyderabad",
       description: "Recognition for expertise in teaching historical concepts and critical thinking."
     }
   ];

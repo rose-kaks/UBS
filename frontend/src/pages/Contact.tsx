@@ -70,10 +70,10 @@ const Contact = () => {
                   </CardHeader>
                   <CardContent>
                     <a href="tel:+18005551234" className="text-blue-600 hover:underline">
-                      (800) 555-1234
+                      +91 555-1234567
                     </a>
                     <p className="mt-2 text-sm text-muted-foreground">
-                      Monday-Friday, 9am-5pm EST
+                      Monday-Friday, 9am-5pm IST
                     </p>
                   </CardContent>
                 </Card>
@@ -88,8 +88,8 @@ const Contact = () => {
                   <CardContent>
                     <address className="not-italic">
                       123 Education Drive<br />
-                      Suite 400<br />
-                      Boston, MA 02108
+                      5th level HITECH Business Solutions<br />
+                      Pune, Mumbai 500044
                     </address>
                   </CardContent>
                 </Card>
